@@ -18,8 +18,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//modifica controller per rotta
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+//raggruppo le mie rotte di amministrazione
+Route::middleware('auth', 'verified')
+    //aggiungo un nome a tutte le rotte del gruppo
+    //prefisso che si aggiunge al nome della rotta
+    ->name('admin.')
+    //modifica url della rotta di questo gruppo /admin/...
+    ->prefix('admin')
+    ->group(function () {
+        //modifica controller per rotta, rimuovo il middleware singolo perchè ora è un gruppo
+        // tolgo dashboard da / perchè ora le mie rotte hanno /admin
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    });
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
