@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,9 @@ Route::middleware('auth', 'verified')
         //modifica controller per rotta, rimuovo il middleware singolo perchè ora è un gruppo
         // tolgo dashboard da / perchè ora le mie rotte hanno /admin
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+        //projects
+        Route::resource('projects', ProjectController::class);
     });
 
 

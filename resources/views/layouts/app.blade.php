@@ -50,6 +50,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        <!--Creo un link per la mia rotta admin.index visible solo da loggato grazie a @ + auth-->
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

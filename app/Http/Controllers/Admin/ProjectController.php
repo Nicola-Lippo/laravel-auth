@@ -1,7 +1,8 @@
 <?php
-
-namespace App\Http\Controllers;
-
+//modifiche dopo spostamento in cartella Admin
+namespace App\Http\Controllers\Admin;
+//importazione controller principale
+use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -13,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return 'lista progetti';
     }
 
     /**
