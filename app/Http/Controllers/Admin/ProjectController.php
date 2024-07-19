@@ -14,7 +14,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return 'lista progetti';
+        //passo alla rotta con view() la mia pagina blade
+        return view('admin.projects.index');
     }
 
     /**
