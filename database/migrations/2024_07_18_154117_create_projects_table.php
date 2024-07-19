@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            //unique fa si che non ci siano 2 progetti con lo stesso titolo
+            $table->string('title', 100)->unique();
+            $table->text('description');
+            //slung, url in form umana + identificativo
+            $table->string('slug');
             $table->timestamps();
         });
     }
