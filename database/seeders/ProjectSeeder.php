@@ -24,7 +24,7 @@ class ProjectSeeder extends Seeder
             $project = new Project();
             //asswgna valori
             $project->title = $faker->sentence(5);
-            $project->description = $faker->text(25);
+            $project->description = $faker->text(100);
             //i dati sono gia pronti, save consolida
             $project->slug = Str::of($project->title)->slug('-');
             //consolida i dati
