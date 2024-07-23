@@ -19,7 +19,7 @@
                                     <h4>ID: {{ $project->id }}</h4>
                                 </div>
                                 <div class="d-flex justify-content-around">
-                                    <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary m-3">
+                                    <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary m-3">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </a>
                                     <a href="#" class="btn btn-warning m-3">

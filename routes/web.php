@@ -33,7 +33,15 @@ Route::middleware('auth', 'verified')
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         //projects
-        Route::resource('projects', ProjectController::class);
+        /*parameters si aspetta array associativo chiave = entità su cui lavoriamo
+        valore = una stringa che indefica il campo definito nella migrazione
+        nb = eliminare ->id in route on index.blade.php
+        */
+        Route::resource('projects', ProjectController::class)->parameters(
+            [
+                'projects' => 'project:slug'
+            ]
+        );
     });
 
 
