@@ -22,7 +22,7 @@
                                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary m-3">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </a>
-                                    <a href="#" class="btn btn-warning m-3">
+                                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning m-3">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                     <a href="#" class="btn btn-danger m-3">

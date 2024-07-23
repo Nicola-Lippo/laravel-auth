@@ -33,7 +33,7 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProjectRequest $request)
+    public function store(StoreProjectRequest $request, Project $project)
     {
         //salviamo i dati dentro una variabile
         $data = $request->validated();
@@ -44,7 +44,8 @@ class ProjectController extends Controller
         $project->description = $data['description'];
         $project->slug = $data['slug'];
         $project->save();
-        return view('admin.projects.create');
+        //uso with per stampare un mess in pagina
+        return view('admin.projects.show', compact('project'))->with('status', 'Progetto creato correttamente');
     }
 
     /**
@@ -60,7 +61,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -68,7 +69,15 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+        $data['slug'] = Str::of($data['title'])->slug();
+
+        $project->title = $data['title'];
+        $project->description = $data['description'];
+        $project->slug = $data['slug'];
+        $project->save();
+
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
