@@ -9,18 +9,17 @@
         <section class="py-5">
             <div class="d-flex">
                 <div class="row">
-                    @foreach ($project as $token)
+                    @foreach ($projects as $project)
                         <div class="col-4 py-2">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">{{ $token->title }}</h5>
-                                    <p class="card-text">{{ $token->description }}</p>
-                                    <p><strong>SLUG:</strong> {{ $token->slug }}</p>
-                                    <h4>ID: {{ $token->id }}</h4>
+                                    <h5 class="card-title">{{ $project->title }}</h5>
+                                    <p class="card-text">{{ $project->description }}</p>
+                                    <p><strong>SLUG:</strong> {{ $project->slug }}</p>
+                                    <h4>ID: {{ $project->id }}</h4>
                                 </div>
                                 <div class="d-flex justify-content-around">
-                                    <a href="{{ route('admin.projects.show', $project[0]->id) }}"
-                                        class="btn btn-primary m-3">
+                                    <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary m-3">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </a>
                                     <a href="#" class="btn btn-warning m-3">
@@ -35,7 +34,6 @@
                     @endforeach
                 </div>
             </div>
-
         </section>
     </div>
 @endsection

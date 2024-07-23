@@ -15,9 +15,9 @@ class ProjectController extends Controller
     public function index()
     {
         //all metodo per leggere tutti i campi della tabella
-        $project = Project::all();
+        $projects = Project::all();
         //passo alla rotta con view() la mia pagina blade
-        return view('admin.projects.index', compact('project'));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
