@@ -19,8 +19,8 @@
             <div class="card">
                 <div class="card-body text-center">
                     <h2>{{ $project->title }}</h2>
-                    <div>{{ $project->description }}</div>
-                    <div>{{ $project->slug }}</div>
+                    <div>DESCRIZIONE: {{ $project->description }}</div>
+                    <div>SLUG: {{ $project->slug }}</div>
                     <div><strong>ID: {{ $project->id }}</strong></div>
                 </div>
             </div>

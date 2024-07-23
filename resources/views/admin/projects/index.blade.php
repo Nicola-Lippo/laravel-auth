@@ -15,8 +15,6 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $project->title }}</h5>
                                     <p class="card-text">{{ $project->description }}</p>
-                                    <p><strong>SLUG:</strong> {{ $project->slug }}</p>
-                                    <h4>ID: {{ $project->id }}</h4>
                                 </div>
                                 <div class="d-flex justify-content-around">
                                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary m-3">
