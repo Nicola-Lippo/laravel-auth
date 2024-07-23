@@ -4,7 +4,7 @@
     <div class="container">
         <h2 class="text-center py-3">Sezione Progetti Admin (S.P.A.)</h2>
         <div class="d-flex justify-content-center">
-            <button class="btn btn-primary btn-lg">Crea un nuovo progetto</button>
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-primary btn-lg">Crea un nuovo progetto</a>
         </div>
         <section class="py-5">
             <div class="d-flex">
